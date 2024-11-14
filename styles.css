@@ -150,7 +150,8 @@ line-height: 1.375;
 }
 
 .listing_event-card{
-    width: calc(33.3333% - 60px);
+    box-sizing: border-box;
+    flex-basis: calc(33.33% - 60px);
     margin: 0 30px 120px;
 }
 
