@@ -1,30 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <title>Lenni Art</title>
-        <link rel="stylesheet" href="styles/styles.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    </head>
+    @@include('blocks/head.html')
     <body class="body">
-        <header class="page-header">
-            <div class="page-header__container">
-                <a href="#" class="page-header_logo">
-                    <img src="assets/images/logo (2).svg" class="page-header_logo-icon">
-                </a>
-                <nav class="page-header_nav">
-                    <a href="#" class="page-header_nav-link">Мероприятия</a>
-                    <a href="#" class="page-header_nav-link">Блог</a>
-                    <a href="#" class="page-header_nav-link">О нас</a>
-                    <a href="#" class="page-header_nav-link">Контакты</a>
-                </nav>
-                <div class="page-header_right-block">
-                    <a href="#" class="page-header_btn btn">Войти</a>
-                </div>
-            </div>
-            
-        </header>
+        @@include('blocks/page-header.html')
         <main class="main">
             <div class="events">
             <section class="listing events_listing">
@@ -35,11 +13,11 @@
                     @@loop('blocks/event-card.html', [
                     {
                         "class": "listing_event-card",
-                        "img": "assets/images/card__Nirvana.jpg",
+                        "img":"assets/images/card__Nirvana.jpg",
                         "alt": "Nirvana",
                         "title": "Собираемся и слушаем альбом Nirvana. Nirvana",
                         "descr": "Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий студийный материал.",
-                        "datetime": "2022-12-07T18:00"
+                        "datetime": "2022-12-07T18:00",
                         "time": "07.12.2022 | начало 18.00"
                     },
                     {
@@ -48,7 +26,7 @@
                         "alt": "podcast",
                         "title": "Есть тема, нужно обсудить с HowStuffWorks",
                         "descr": "Один из самых популярных подкастов в мире.В нём авторы объясняют, как устроены разные вещи.",
-                        "datetime": "2022-12-14T18:30"
+                        "datetime": "2022-12-14T18:30",
                         "time": "14.12.2022 | начало 18.30"
                     },
                     {
@@ -57,17 +35,22 @@
                         "alt": "musicband",
                         "title": "Вечер | The Best of Sade",
                         "descr": "Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза,ритм-блюза и фанка.",
-                        "datetime": "2022-12-16T20:00"
+                        "datetime": "2022-12-16T20:00",
                         "time": "16.12.2022 | начало 20.00"
                     }
                     ])
 
                 </div>
             </section>
+
             </div>
+            
+            <div class="home">
+                <!-- прочая разметка -->
+                <!-- prettier-ignore -->
+                @@include('blocks/blog-listing.html', {"class": "home__listing"})
+                <!-- прочая разметка -->
+              </div>
         </main>
-        <footer class="page-footer">
-            <p>Подвал</p>
-        </footer>     
-    </body>
+        @@include('blocks/page-footer.html')
 </html>
